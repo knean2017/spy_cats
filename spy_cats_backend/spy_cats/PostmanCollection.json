@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "spy-cat-agency-api",
+		"name": "Spy Cat Agency API",
+		"description": "API endpoints for the Spy Cat Agency management system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Spy Cats",
+			"item": [
+				{
+					"name": "Get All Cats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cats/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cats",
+								""
+							]
+						},
+						"description": "Retrieve a list of all spy cats"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Cat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Whiskers\",\n  \"experience\": 3,\n  \"breed\": \"Siamese\",\n  \"salary\": 5000.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/cats/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cats",
+								""
+							]
+						},
+						"description": "Create a new spy cat"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cat by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cats/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cats",
+								"1",
+								""
+							]
+						},
+						"description": "Retrieve a specific spy cat by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cat Salary",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"salary\": 5500.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/cats/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cats",
+								"1",
+								""
+							]
+						},
+						"description": "Update a spy cat's salary"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cats/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cats",
+								"1",
+								""
+							]
+						},
+						"description": "Delete a spy cat by ID"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000"
+		}
+	]
+}
